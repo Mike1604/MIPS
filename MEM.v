@@ -1,7 +1,7 @@
 `timescale 1ns/1ns
 module MEM(
     input Ewr,
-    input [4:0]Dir,
+    input [31:0]Dir,
     input [31:0]alu,
     output reg[31:0]OUT
 );
