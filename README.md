@@ -1,2 +1,2 @@
-# Proyecto-Arquitectura D13E02
+# Proyecto-Arquitectura D13 E02
 El objetivo final es obtener un Datapath Completo
