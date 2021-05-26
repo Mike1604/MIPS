@@ -1,54 +1,145 @@
 `timescale 1ns/1ns
-module DTPR(
-    input [31:0]Inst,
-    output ZeF 
+
+module DataPath(
+	input Clk
 );
-wire c1,c2,c3;
-wire [2:0]c4;
-wire[2:0]selCa;
-wire [31:0]op1;
-wire[31:0]op2;
-wire [31:0]resCa;
-wire [31:0]EAMux;
-wire [31:0]BrRes;
-UC DTPR(
-    .Opc(Inst[31:26]),
-    .Memtoreg(c1),
-    .RegWrite(c2),
-    .MemToWrite(c3),
-    .ALUOp(c4)
+
+wire [31:0]ADDMUX, ADDMUX1, Instruction, MUXPC, Dir, DirMem, SignExtend, ReadData1, ReadData2, SalidaMuxF,ReadDataMem, WriteData, ShiftLeftB;
+wire [5:0]Opc;
+wire [4:0]Mux4B;
+wire [3:0]OutAlu;
+wire [2:0]ALUOp;
+wire flag;
+wire RegDst;
+wire MemToReg;
+wire MemRead; 
+wire RegWrite;
+wire MemToWrite;
+wire branch;
+wire ALUSrc;
+wire AND;
+
+PC CicloFetch(
+	.clk(Clk),
+	.Entrada(MUXPC),
+	.Salida(Dir)
 );
-BR DTPR2(
-    .RA1(Inst[25:21]),
-    .RA2(Inst[20:16]),
-    .RWrite(c2),
-    .Di(BrRes),
-    .Dir(Inst[15:11]),
-    .Dr1(op1),
-    .Dr2(op2)
+
+Instruction_Memory A(
+	.Dir(Dir),
+	.Instruction(Instruction)
 );
-ALC DTPR3(
-    .Ins(Inst[5:0]),
-    .Code(c4),
-    .OutAlu(selCa)
+
+Unidad_Control B(
+	.Opc(Instruction[31:26]),
+        .MemToReg(MemToReg),
+        .MemRead(MemRead),
+        .RegWrite(RegWrite),
+        .MemToWrite(MemToWrite),
+        .RegDst(RegDst),
+        .branch(branch),
+        .ALUSrc(ALUSrc),
+        .ALUOp(ALUOp)
 );
-ALU DTPR4(
-    .EA(op1),
-    .EB(op2),
-    .sel(selCa),
-    .res(resCa),
-    .flag(ZeF)
+
+
+Multiplexor4B C(
+	.OP0(Instruction[20:16]),
+	.OP1(Instruction[15:11]),
+	.RegDst(RegDst),
+	.Salida(Mux4B)
 );
-MEM DTPR5(
-    .Ewr(c3),
-    .Dir(resCa),
-    .alu(op2),
-    .OUT(EAMux)
+
+
+Banco_Registros D(
+	.ReadRegister1(Instruction[25:21]),
+	.ReadRegister2(Instruction[20:16]),
+	.WriteData(WriteData),
+	.WriteRegister(Mux4B),
+	.RegWrite(RegWrite),
+	.ReadData1(ReadData1),
+	.ReadData2(ReadData2)
 );
-MUX DTPR6(
-    .Memd(EAMux),
-    .res(resCa),
-    .dec(c1),
-    .MuxOut(BrRes)
+
+
+SignExtend E(
+	.SignInput(Instruction[15:0]),
+	.Extend(SignExtend)
+);
+
+
+Multiplexor F(
+	.OP0(ReadData2),
+	.OP1(SignExtend),
+	.Dec(ALUSrc),
+	.Salida(SalidaMuxF)
+);
+
+
+ALUCONTROL G(
+	.Instruction(Instruction[5:0]),
+	.ALUOp(ALUOp),
+	.OutAlu(OutAlu)
+);
+
+
+ALU H(
+	.EA(ReadData1),
+	.EB(SalidaMuxF),
+	.sel(OutAlu),
+	.res(DirMem),
+	.flag(flag)
+);
+
+
+Memoria J(
+	.MemRead(MemRead),
+	.Adress(DirMem),
+	.WriteData(ReadData2),
+	.ReadData(ReadDataMem)
+
+);
+
+
+Multiplexor K(
+	.OP0(DirMem),
+	.OP1(ReadDataMem),
+	.Dec(MemToReg),
+	.Salida(WriteData)
+);
+
+
+ShiftLeft L(
+	.A(SignExtend),
+	.B(ShiftLeftB)
+);
+
+
+Sumador M(
+	.A(ADDMUX),
+	.B(ShiftLeftB),
+	.C(ADDMUX1)
+);
+
+
+Multiplexor N(
+	.OP0(ADDMUX),
+	.OP1(ADDMUX1),
+	.Dec(AND),
+	.Salida(MUXPC)
+);
+
+
+Sumador4 O(
+	.A(Dir),
+	.B(ADDMUX)
+);
+
+
+AND P(
+	.branch(branch),
+	.flag(flag),
+	.Salida(AND)
+
 );
 endmodule
