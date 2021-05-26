@@ -1,20 +1,25 @@
-module MUX(
-    input [31:0]Memd,
-    input [31:0]res,
-    input dec,
-    output reg[31:0]MuxOut
+`timescale 1ns/1ns
+
+module Multiplexor(
+	input [31:0]OP0,
+	input [31:0]OP1,
+	input Dec,
+	output reg[31:0]Salida
 );
-always @* 
+
+always@*
 begin
-    case (dec)
-        1'b0:
-        begin
-          MuxOut <= res;
-        end
-        1'b1:
-        begin
-          MuxOut <= Memd;
-        end
-    endcase
+  case(Dec)
+	1'b0:
+	begin
+	  Salida <= OP0;
+	end
+
+	1'b1:
+	begin
+	  Salida <= OP1;
+	end	
+  endcase
 end
 endmodule
+
