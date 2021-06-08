@@ -9,31 +9,55 @@ module Unidad_Control(
 always @* 
 begin
     case (Opc)
-    /*
-    6'b000000:
+  
+    6'b000000:  //  FORMATO R
     begin
-      MemToReg = 1'b0;
-      MemToWrite = 1'b0;
-      ALUOp = 3'b001;
-      RegWrite = 1'b1;
-      MemRead = 1'b0;
-      RegDst = 1'b1;
-      branch = 1'b0;
-      ALUSrc = 1'b0;
-    end*/
-
-    6'b100011
-    begin
-      WB[0] = 1:
-      WB[1] = 1;
-      M[0] = 0;
-      M[1] = 0;
-      M[2] = 0;
-      EX[0] = 0:
-      EX[2:1] = 2'B10;
-      EX[3] = 1;
+      EX[0] = 1'b1; //  RegDst
+      EX[2:1] = 2'b10 //ALUOp
+      EX[3] = 1'b0;  //  ALUSrc
+      M[0] = 1'b0;  //  branch
+      M[1] = 1'b0;  //  MemRead
+      M[2] = 1'b0;  //  MemWrite
+      WB[0] = 1'b1; //  RegWrite
+      WB[1] = 1'b0; //  MemtoReg
     end
-    /*
+
+    6'b100011:   //  LW
+    begin
+      EX[0] = 1'b0; //  RegDst
+      EX[2:1] = 2'b00 //ALUOp
+      EX[3] = 1'b1;  //  ALUSrc
+      M[0] = 1'b0;  //  branch
+      M[1] = 1'b1;  //  MemRead
+      M[2] = 1'b0;  //  MemWrite
+      WB[0] = 1'b1; //  RegWrite
+      WB[1] = 1'b1; //  MemtoReg
+      end
+
+    6'b101011:  //  SW
+    begin
+      EX[0] = 1'bx; //  RegDst
+      EX[2:1] = 2'b00 //ALUOp
+      EX[3] = 1'b1;  //  ALUSrc
+      M[0] = 1'b0;  //  branch
+      M[1] = 1'b0;  //  MemRead
+      M[2] = 1'b1;  //  MemWrite
+      WB[0] = 1'b0; //  RegWrite
+      WB[1] = 1'bx; //  MemtoReg
+    end
+
+    6'b000100:  //  BEQ
+    begin
+      EX[0] = 1'bx; //  RegDst
+      EX[2:1] = 2'b01 //ALUOp
+      EX[3] = 1'b0;  //  ALUSrc
+      M[0] = 1'b1;  //  branch
+      M[1] = 1'b0;  //  MemRead
+      M[2] = 1'b0;  //  MemWrite
+      WB[0] = 1'b0; //  RegWrite
+      WB[1] = 1'bx; //  MemtoReg
+    end
+    
     default 
     begin
       MemToReg = 1'bx;
@@ -44,7 +68,7 @@ begin
       RegDst = 1'bx;
       branch = 1'bx;
       ALUSrc = 1'bx;
-    end*/
+    end
     endcase
 end
 endmodule
