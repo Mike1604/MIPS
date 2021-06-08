@@ -1,6 +1,7 @@
 `timescale 1ns/1ns
 module Memoria(
     input MemRead,
+    input MemWrite,
     input [31:0]Adress,
     input [31:0]WriteData,
     output reg[31:0]ReadData
