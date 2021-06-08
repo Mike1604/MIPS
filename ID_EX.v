@@ -2,33 +2,30 @@
 
 `timescale 1ns/1ns
 
-module IF_ID()
+module ID_EX()
 {
-    input WB,
-    input M,
-    input EX,
-    input Sumador,
-    input [31:0]Dato_1,
-    input [31:0]Dato_2,
-    input [31:0]Extension,
-    input [4:0]Instruccion,
-    input [4:0]Instruccion1,
-    output WB_1,
-    output M_1,
-    output EX_1,
-    output Sumador_1,
-    output [31:0]Dato_1,
-    output [31:0]Dato_2,
-    output  Extension_1;
-    output [4:0]Instruccion_1,
-    output [4:0]Instruccion1_1
+    input clk,
+    input [31:0]in_add,
+    input [31:0]in_Dato1,
+    input [31:0]in_Dato2,
+    input [31:0]in_Extend,
+    input [4:0]in_b20_16,
+    input [4:0]in_b15_11,
+    output reg[31_0]ou_add,
+    output reg[31:0]ou_Dato_1,
+    output reg[31:0]ou_Dato_2,
+    output reg[31:0]ou_Extend;
+    output reg[4:0]ou_b20_16,
+    output reg[4:0]ou_b15_11
 };
 
-reg [31:0] BU2 [0:31];
-
-always @() begin
-    in_add = ou_add;
-    in_insmem = ou_insmem;
+always @(posedge clk) begin
+    ou_add <= in_add;
+    ou_Dato_1 <= in_Dato1;
+    ou_Dato_2 <= in_Dato2;
+    ou_Extend <= in_Extend;
+    ou_b20_16 <= in_b20_16;
+    ou_b15_11 <= in_b15_11;
 end
 
 endmodule
