@@ -2,23 +2,27 @@
 
 `timescale 1ns/1ns
 
-module IF_ID()
+module EX_MEM()
 {
-    input W_B,
-    input M,
-    input [32]sumador,
-    input [32]Alu_Resu,
-    input cero,
-    input [32:0]dato_2
-    output [32]ou_add,
-    output [32]ou_insmem
+    input clk,
+    input [31:0]in_add,
+    input in_flag,
+    input [31:0]in_res,
+    input [31:0]in_dat2,
+    input [4:0]in_mux
+    output reg[31:0]ou_add,
+    output reg ou_flag,
+    output reg[31:0]ou_res,
+    output reg[31:0]ou_dat2,
+    output reg[31:0]ou_mux
 };
 
-reg [31:0] BU1 [0:31];
-
-always @() begin
-    in_add = ou_add;
-    in_insmem = ou_insmem;
+always @(posedge clk) begin
+    ou_add <= in_add;
+    ou_flag <= in_flag;
+    ou_res <= in_res;
+    ou_dat2 <= in_dat2;
+    ou_mux <= in_mux;
 end
 
 endmodule
