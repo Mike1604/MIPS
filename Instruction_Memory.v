@@ -8,7 +8,8 @@ module Instruction_Memory(
 reg [7:0]M [0:399];
 
 initial
-     $readmemb("TestF2_MemInst.mem",M);
+	$display("Datos cargados en Instruction Memory...");
+    $readmemb("TestF2_MemInst.mem",M);
 
 always@*
 begin
