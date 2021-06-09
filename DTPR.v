@@ -47,7 +47,7 @@ Unidad_Control B(
 	.Opc(C6[31:26]),
 	.WB(C10),
 	.M(C11),
-	.EX(C12),
+	.EX(C12)
 );
 
 Banco_Registros D(
@@ -66,6 +66,7 @@ SignExtend E(
 );
 
 ID_EX BUFFER2(
+	.clk(CLK),
 	.in_add(C6),
 	.in_Dato1(C7),
 	.in_Dato2(C8),
@@ -120,6 +121,7 @@ Multiplexor4B C(
 );
 
 EX_MEM BUFFER3(
+	.clk(CLK),
 	.in_add(C20),
 	.in_flag(C21),
 	.in_res(C22),
@@ -147,6 +149,7 @@ Memoria J(
 );
 
 MEM_WB BUFFER4(
+	.clk(CLK),
 	.in_red(C31),
 	.in_res(C27),
 	.in_mux(C30),
@@ -158,7 +161,7 @@ MEM_WB BUFFER4(
 Multiplexor K(
 	.OP0(C32),
 	.OP1(C33),
-	.Dec(C10[1]),,
+	.Dec(C10[1]),
 	.Salida(C35)
 );
 
