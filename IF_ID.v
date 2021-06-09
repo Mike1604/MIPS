@@ -5,10 +5,10 @@
 module IF_ID()
 {
     input clk,
-    input [32]in_add,
-    input [32]in_insmem,
-    output reg [32]ou_add,
-    output reg [32]ou_insmem
+    input [31:0]in_add,
+    input [31:0]in_insmem,
+    output reg [31:0]ou_add,
+    output reg [31:0]ou_insmem
 };
 
 always @(posedge clk) begin
