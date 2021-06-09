@@ -10,6 +10,7 @@ module Banco_Registros(
 );
 reg [31:0] BRM [0:31];
 initial begin
+    $display("Datos cargados en memoria...");
     $readmemb("BR.MEM",BRM);
     
 end
