@@ -1,4 +1,5 @@
 `timescale 1ns/1ns
+
 module Banco_Registros(
     input [4:0]ReadRegister1,
     input [4:0]ReadRegister2,
@@ -8,12 +9,15 @@ module Banco_Registros(
     output reg[31:0]ReadData1,
     output reg[31:0]ReadData2
 );
+
 reg [31:0] BRM [0:31];
+
 initial begin
     $display("Datos cargados en memoria...");
     $readmemb("BR.MEM",BRM);
     
 end
+
 always @*
 begin
     ReadData1 = BRM[ReadRegister1];

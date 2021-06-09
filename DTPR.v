@@ -109,14 +109,14 @@ ALU H(
 
 ALUCONTROL G(
 	.Instruction(C17[5:0]),
-	.ALUOp(),
+	.ALUOp(C12[2:1]),
 	.OutAlu(C12[2:1])
 );
 
 Multiplexor4B C(
 	.OP0(C18),
 	.OP1(C19),
-	.RegDst(D12[0]),
+	.RegDst(C12[0]),
 	.Salida(C24)
 );
 

@@ -13,7 +13,7 @@ begin
     6'b000000:  //  FORMATO R
     begin
       EX[0] = 1'b1; //  RegDst
-      EX[2:1] = 2'b10 //ALUOp
+      EX[2:1] = 2'b10; //ALUOp
       EX[3] = 1'b0;  //  ALUSrc
       M[0] = 1'b0;  //  branch
       M[1] = 1'b0;  //  MemRead
@@ -25,7 +25,7 @@ begin
     6'b100011:   //  LW
     begin
       EX[0] = 1'b0; //  RegDst
-      EX[2:1] = 2'b00 //ALUOp
+      EX[2:1] = 2'b00; //ALUOp
       EX[3] = 1'b1;  //  ALUSrc
       M[0] = 1'b0;  //  branch
       M[1] = 1'b1;  //  MemRead
@@ -37,7 +37,7 @@ begin
     6'b101011:  //  SW
     begin
       EX[0] = 1'bx; //  RegDst
-      EX[2:1] = 2'b00 //ALUOp
+      EX[2:1] = 2'b00; //ALUOp
       EX[3] = 1'b1;  //  ALUSrc
       M[0] = 1'b0;  //  branch
       M[1] = 1'b0;  //  MemRead
@@ -49,7 +49,19 @@ begin
     6'b000100:  //  BEQ
     begin
       EX[0] = 1'bx; //  RegDst
-      EX[2:1] = 2'b01 //ALUOp
+      EX[2:1] = 2'b01; //ALUOp
+      EX[3] = 1'b0;  //  ALUSrc
+      M[0] = 1'b1;  //  branch
+      M[1] = 1'b0;  //  MemRead
+      M[2] = 1'b0;  //  MemWrite
+      WB[0] = 1'b0; //  RegWrite
+      WB[1] = 1'bx; //  MemtoReg
+    end
+
+    6'b001000:  //  ADDI
+    begin
+      EX[0] = 1'bx; //  RegDst
+      EX[2:1] = 2'b01; //ALUOp
       EX[3] = 1'b0;  //  ALUSrc
       M[0] = 1'b1;  //  branch
       M[1] = 1'b0;  //  MemRead
@@ -58,17 +70,42 @@ begin
       WB[1] = 1'bx; //  MemtoReg
     end
     
-    default 
+    6'b001010:  //  SLTI
     begin
-      MemToReg = 1'bx;
-      MemToWrite = 1'bx;
-      ALUOp = 3'bx;
-      RegWrite = 1'bx;
-      MemRead = 1'bx;
-      RegDst = 1'bx;
-      branch = 1'bx;
-      ALUSrc = 1'bx;
+      EX[0] = 1'bx; //  RegDst
+      EX[2:1] = 2'b01; //ALUOp
+      EX[3] = 1'b0;  //  ALUSrc
+      M[0] = 1'b1;  //  branch
+      M[1] = 1'b0;  //  MemRead
+      M[2] = 1'b0;  //  MemWrite
+      WB[0] = 1'b0; //  RegWrite
+      WB[1] = 1'bx; //  MemtoReg
     end
+
+    6'b001100:  //  ANDI
+    begin
+      EX[0] = 1'bx; //  RegDst
+      EX[2:1] = 2'b01; //ALUOp
+      EX[3] = 1'b0;  //  ALUSrc
+      M[0] = 1'b1;  //  branch
+      M[1] = 1'b0;  //  MemRead
+      M[2] = 1'b0;  //  MemWrite
+      WB[0] = 1'b0; //  RegWrite
+      WB[1] = 1'bx; //  MemtoReg
+    end
+
+    6'b001101:  //  ORI
+    begin
+      EX[0] = 1'bx; //  RegDst
+      EX[2:1] = 2'b01; //ALUOp
+      EX[3] = 1'b0;  //  ALUSrc
+      M[0] = 1'b1;  //  branch
+      M[1] = 1'b0;  //  MemRead
+      M[2] = 1'b0;  //  MemWrite
+      WB[0] = 1'b0; //  RegWrite
+      WB[1] = 1'bx; //  MemtoReg
+    end
+    
     endcase
 end
 endmodule
