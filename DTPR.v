@@ -1,145 +1,165 @@
 `timescale 1ns/1ns
 
 module DataPath(
-	input Clk
+	input CLK
 );
 
-wire [31:0]ADDMUX, ADDMUX1, Instruction, MUXPC, Dir, DirMem, SignExtend, ReadData1, ReadData2, SalidaMuxF,ReadDataMem, WriteData, ShiftLeftB;
-wire [5:0]Opc;
-wire [4:0]Mux4B;
-wire [3:0]OutAlu;
-wire [2:0]ALUOp;
-wire flag;
-wire RegDst;
-wire MemToReg;
-wire MemRead; 
-wire RegWrite;
-wire MemToWrite;
-wire branch;
-wire ALUSrc;
-wire AND;
+wire [31:0]C1, C2, C3, C4, C5, C6, C7, C8, C9, C13, C14, C15, C16, C17;
+wire [31:0]C16_1, C20, C22, C25, C27, C28, C31, C32, C33, C35;
+wire [1:0]C10;
+wire [2:0]C11;
+wire [3:0]C12, C23;
+wire [4:0]C18, C19, C24, C30, C34;
+wire C21, C26, C29;
+
+Multiplexor N(
+	.OP0(C3),
+	.OP1(C26),
+	.Dec(C29),
+	.Salida(C1)
+);
 
 PC CicloFetch(
-	.clk(Clk),
-	.Entrada(MUXPC),
-	.Salida(Dir)
+	.clk(CLK),
+	.Entrada(C1),
+	.Salida(C2)
 );
 
 Instruction_Memory A(
-	.Dir(Dir),
-	.Instruction(Instruction)
+	.Dir(C2),
+	.Instruction(C4)
+);
+
+Sumador4 O(
+	.A(C2),
+	.B(C3)
+);
+
+IF_ID BUFFER1(
+	.clk(CLK),
+	.in_add(C3),
+	.in_insmem(C4),
+	.ou_add(C5),
+	.ou_insmem(C6)
 );
 
 Unidad_Control B(
-	.Opc(Instruction[31:26]),
-        .MemToReg(MemToReg),
-        .MemRead(MemRead),
-        .RegWrite(RegWrite),
-        .MemToWrite(MemToWrite),
-        .RegDst(RegDst),
-        .branch(branch),
-        .ALUSrc(ALUSrc),
-        .ALUOp(ALUOp)
+	.Opc(C6[31:26]),
+	.WB(C10),
+	.M(C11),
+	.EX(C12),
 );
-
-
-Multiplexor4B C(
-	.OP0(Instruction[20:16]),
-	.OP1(Instruction[15:11]),
-	.RegDst(RegDst),
-	.Salida(Mux4B)
-);
-
 
 Banco_Registros D(
-	.ReadRegister1(Instruction[25:21]),
-	.ReadRegister2(Instruction[20:16]),
-	.WriteData(WriteData),
-	.WriteRegister(Mux4B),
-	.RegWrite(RegWrite),
-	.ReadData1(ReadData1),
-	.ReadData2(ReadData2)
+	.ReadRegister1(C6[25:21]),
+	.ReadRegister2(C6[20:16]),
+	.WriteData(C35),
+	.WriteRegister(C34),
+	.RegWrite(C10),
+	.ReadData1(C7),
+	.ReadData2(C8)
 );
-
 
 SignExtend E(
-	.SignInput(Instruction[15:0]),
-	.Extend(SignExtend)
+	.SignInput(C6[15:0]),
+	.Extend(C9)
 );
 
-
-Multiplexor F(
-	.OP0(ReadData2),
-	.OP1(SignExtend),
-	.Dec(ALUSrc),
-	.Salida(SalidaMuxF)
+ID_EX BUFFER2(
+	.in_add(C6),
+	.in_Dato1(C7),
+	.in_Dato2(C8),
+	.in_Extend(C9),
+	.in_b20_16(C6),
+	.in_b15_11(C6),
+	.ou_add(C13),
+	.ou_Dato_1(C15),
+	.ou_Dato_2(C16),
+	.ou_Extend(C17),
+	.ou_b20_16(C18),
+	.ou_b15_11(C19)
 );
-
-
-ALUCONTROL G(
-	.Instruction(Instruction[5:0]),
-	.ALUOp(ALUOp),
-	.OutAlu(OutAlu)
-);
-
-
-ALU H(
-	.EA(ReadData1),
-	.EB(SalidaMuxF),
-	.sel(OutAlu),
-	.res(DirMem),
-	.flag(flag)
-);
-
-
-Memoria J(
-	.MemRead(MemRead),
-	.Adress(DirMem),
-	.WriteData(ReadData2),
-	.ReadData(ReadDataMem)
-
-);
-
-
-Multiplexor K(
-	.OP0(DirMem),
-	.OP1(ReadDataMem),
-	.Dec(MemToReg),
-	.Salida(WriteData)
-);
-
 
 ShiftLeft L(
-	.A(SignExtend),
-	.B(ShiftLeftB)
+	.A(C17),
+	.B(C14)
 );
-
 
 Sumador M(
-	.A(ADDMUX),
-	.B(ShiftLeftB),
-	.C(ADDMUX1)
+	.A(C13),
+	.B(C14),
+	.C(C20)
 );
 
-
-Multiplexor N(
-	.OP0(ADDMUX),
-	.OP1(ADDMUX1),
-	.Dec(AND),
-	.Salida(MUXPC)
+Multiplexor F(
+	.OP0(C16),
+	.OP1(C17),
+	.Dec(C12[3]),
+	.Salida(C16_1)
 );
 
-
-Sumador4 O(
-	.A(Dir),
-	.B(ADDMUX)
+ALU H(
+	.EA(C15),
+	.EB(C16_1),
+	.sel(C23),
+	.res(C22),
+	.flag(C21)
 );
 
+ALUCONTROL G(
+	.Instruction(C17[5:0]),
+	.ALUOp(),
+	.OutAlu(C12[2:1])
+);
+
+Multiplexor4B C(
+	.OP0(C18),
+	.OP1(C19),
+	.RegDst(D12[0]),
+	.Salida(C24)
+);
+
+EX_MEM BUFFER3(
+	.in_add(C20),
+	.in_flag(C21),
+	.in_res(C22),
+	.in_dat2(C16),
+	.in_mux(C24),
+	.ou_add(C25),
+	.ou_flag(C26),
+	.ou_res(C27),
+	.ou_dat2(C28),
+	.ou_mux(C30)
+);
 
 AND P(
-	.branch(branch),
-	.flag(flag),
-	.Salida(AND)
-
+	.branch(C11[0]),
+	.flag(C26),
+	.Salida(C29)
 );
+
+Memoria J(
+	.Adress(C27),
+	.WriteData(C28),
+	.MemRead(MemRead),
+	.MemWrite(C11[2]),
+	.ReadData(C11[1])
+);
+
+MEM_WB BUFFER4(
+	.in_red(C31),
+	.in_res(C27),
+	.in_mux(C30),
+	.ou_red(C32),
+	.ou_res(C33),
+	.ou_mux(C34)
+);
+
+Multiplexor K(
+	.OP0(C32),
+	.OP1(C33),
+	.Dec(C10[1]),,
+	.Salida(C35)
+);
+
 endmodule
