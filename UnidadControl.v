@@ -31,7 +31,7 @@ begin
       M[1] = 1'b0;  //  MemRead
       M[2] = 1'b0;  //  MemWrite
       WB[0] = 1'b1; //  RegWrite
-      WB[1] = 1'b1; //  MemtoReg
+      WB[1] = 1'b0; //  MemtoReg
       end
 
     6'b101011:  //  SW
