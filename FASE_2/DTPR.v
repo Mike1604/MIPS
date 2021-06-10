@@ -6,8 +6,8 @@ module DataPath(
 
 wire [31:0]C1, C2, C3, C4, C5, C6, C7, C8, C9, C13, C14, C15, C16, C17;
 wire [31:0]C16_1, C20, C22, C25, C27, C28, C31, C32, C33, C35;
-wire [1:0]C10, C10_1, C10_2, C10_3;
-wire [2:0]C11, C11_1, C11_2;
+wire [1:0]C10, C10_1;
+wire [2:0]C11, C11_1;
 wire [3:0] C23;
 wire [4:0]C12, C12_1, C18, C19, C24, C30, C34;
 wire C21, C26, C29;
@@ -68,8 +68,6 @@ SignExtend E(
 ID_EX BUFFER2(
 	.clk(CLK),
 	.in_EX(C12),
-	.in_M(C11),
-	.in_WB(C10),
 	.in_add(C5),
 	.in_Dato1(C7),
 	.in_Dato2(C8),
@@ -82,9 +80,7 @@ ID_EX BUFFER2(
 	.ou_Extend(C17),
 	.ou_b20_16(C18),
 	.ou_b15_11(C19),
-	.ou_EX(C12_1),
-	.ou_M(C11_2),
-	.ou_WB(C10_2)
+	.ou_EX(C12_1)
 );
 
 ShiftLeft L(
@@ -128,8 +124,7 @@ Multiplexor4B C(
 
 EX_MEM BUFFER3(
 	.clk(CLK),
-	.in_M(C11_2),
-	.in_WB(C10_2),
+	.in_M(C11),
 	.in_add(C20),
 	.in_flag(C21),
 	.in_res(C22),
@@ -140,8 +135,7 @@ EX_MEM BUFFER3(
 	.ou_res(C27),
 	.ou_dat2(C28),
 	.ou_mux(C30),
-	.ou_M(C11_1),
-	.ou_WB(C10_3)
+	.ou_M(C11_1)
 );
 
 AND P(
@@ -160,7 +154,7 @@ Memoria J(
 
 MEM_WB BUFFER4(
 	.clk(CLK),
-	.in_WB(C10_3),
+	.in_WB(C10),
 	.in_red(C31),
 	.in_res(C27),
 	.in_mux(C30),

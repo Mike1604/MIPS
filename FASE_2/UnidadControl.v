@@ -28,7 +28,7 @@ begin
       EX[3:1] = 3'b000; //ALUOp
       EX[4] = 1'b1;  //  ALUSrc
       M[0] = 1'b0;  //  branch
-      M[1] = 1'b0;  //  MemRead
+      M[1] = 1'b1;  //  MemRead
       M[2] = 1'b0;  //  MemWrite
       WB[0] = 1'b1; //  RegWrite
       WB[1] = 1'b1; //  MemtoReg
@@ -40,8 +40,8 @@ begin
       EX[3:1] = 3'b000; //ALUOp
       EX[4] = 1'b1;  //  ALUSrc
       M[0] = 1'b0;  //  branch
-      M[1] = 1'b1;  //  MemRead
-      M[2] = 1'b0;  //  MemWrite
+      M[1] = 1'b0;  //  MemRead
+      M[2] = 1'b1;  //  MemWrite
       WB[0] = 1'b0; //  RegWrite
       WB[1] = 1'bx; //  MemtoReg
     end
@@ -64,7 +64,7 @@ begin
       EX[3:1] = 3'b000; //ALUOp
       EX[4] = 1'b1;  //  ALUSrc
       M[0] = 1'b0;  //  branch
-      M[1] = 1'b0;  //  MemRead
+      M[1] = 1'b1;  //  MemRead
       M[2] = 1'b0;  //  MemWrite
       WB[0] = 1'b1; //  RegWrite
       WB[1] = 1'b1; //  MemtoReg
@@ -76,7 +76,7 @@ begin
       EX[3:1] = 3'b100; //ALUOp
       EX[4] = 1'b1;  //  ALUSrc
       M[0] = 1'b0;  //  branch
-      M[1] = 1'b0;  //  MemRead
+      M[1] = 1'b1;  //  MemRead
       M[2] = 1'b0;  //  MemWrite
       WB[0] = 1'b1; //  RegWrite
       WB[1] = 1'b1; //  MemtoReg
@@ -88,7 +88,7 @@ begin
       EX[3:1] = 3'b101; //ALUOp
       EX[4] = 1'b1;  //  ALUSrc
       M[0] = 1'b0;  //  branch
-      M[1] = 1'b0;  //  MemRead
+      M[1] = 1'b1;  //  MemRead
       M[2] = 1'b0;  //  MemWrite
       WB[0] = 1'b1; //  RegWrite
       WB[1] = 1'b1; //  MemtoReg
@@ -100,7 +100,7 @@ begin
       EX[3:1] = 3'b111; //ALUOp
       EX[4] = 1'b1;  //  ALUSrc
       M[0] = 1'b0;  //  branch
-      M[1] = 1'b0;  //  MemRead
+      M[1] = 1'b1;  //  MemRead
       M[2] = 1'b0;  //  MemWrite
       WB[0] = 1'b1; //  RegWrite
       WB[1] = 1'b1; //  MemtoReg

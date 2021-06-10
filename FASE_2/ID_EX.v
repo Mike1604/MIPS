@@ -5,8 +5,6 @@
 module ID_EX(
     input clk,
     input [4:0]in_EX,
-    input [2:0]in_M,
-    input [1:0]in_WB,
     input [31:0]in_add,
     input [31:0]in_Dato1,
     input [31:0]in_Dato2,
@@ -19,9 +17,7 @@ module ID_EX(
     output reg[31:0]ou_Extend,
     output reg[4:0]ou_b20_16,
     output reg[4:0]ou_b15_11,
-    output reg[4:0]ou_EX,
-    output reg[2:0]ou_M,
-    output reg[1:0]ou_WB
+    output reg[4:0]ou_EX
 );
 
 always @(posedge clk) begin
@@ -32,8 +28,6 @@ always @(posedge clk) begin
     ou_b20_16 = in_b20_16;
     ou_b15_11 = in_b15_11;
     ou_EX = in_EX;
-    ou_M = in_M;
-    ou_WB = in_WB;
 end
 
 endmodule
