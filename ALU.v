@@ -45,7 +45,6 @@ begin
 	res = (EA / EB);
     end
 
-
     default
     begin
         res = 32'bx;

@@ -7,6 +7,14 @@ module PC(
 
 
 );
+
+initial Salida = 32'b0;      
+always @ ( posedge clk ) begin         
+	if ( Entrada )
+		Salida = Entrada;    
+	else Salida = 32'b0;     
+end
+/*
 initial begin
 	Salida = 32'h00000000;
 end
@@ -15,5 +23,5 @@ always@(posedge clk)
 begin
 	Salida = Entrada;
 end
-
+*/
 endmodule

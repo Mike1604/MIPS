@@ -14,18 +14,19 @@ reg [31:0] BRM [0:31];
 
 initial begin
     $display("Datos cargados en memoria...");
-    $readmemb("BR.MEM",BRM);
+    $readmemb("BRF2", BRM);
     
 end
 
 always @*
 begin
-    ReadData1 = BRM[ReadRegister1];
-    ReadData2 = BRM[ReadRegister2];
+
     if (RegWrite)
     begin
         BRM[WriteRegister] <= WriteData;
     end
+    ReadData1 = BRM[ReadRegister1];
+    ReadData2 = BRM[ReadRegister2];
 
 end
 endmodule

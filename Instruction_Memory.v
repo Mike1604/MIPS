@@ -5,11 +5,12 @@ module Instruction_Memory(
 	output reg [31:0]Instruction
 
 );
-reg [7:0]M [0:399];
+reg [7:0]M[0:399];
 
 initial begin
+
 	$display("Datos cargados en Instruction Memory...");
-    $readmemb("TestF2_MemInst", M);
+    $readmemb("Insmemf2", M);
 end
 
 always@*

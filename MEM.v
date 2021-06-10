@@ -11,12 +11,12 @@ always @*
 begin
     if(MemRead!=0)
     begin
-        MEM1[Adress] <= WriteData;
-        ReadData <= 32'dx;
+        MEM1[Adress] = WriteData;
+        ReadData = 32'dx;
     end
     else
     begin
-        ReadData <= MEM1[Adress];
+        ReadData = MEM1[Adress];
     end
 end
 

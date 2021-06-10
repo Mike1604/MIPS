@@ -7,6 +7,6 @@ module AND(
 
 );
 
-assign Salida = branch && flag;
+assign Salida = branch & flag;
 
 endmodule

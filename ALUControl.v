@@ -6,7 +6,8 @@ module ALUCONTROL(
 );
 always @* 
 begin
-    if (ALUOp == 3'b001)
+    case (ALUOp)
+    3'b010: //  Instrucciones tipo-R
     begin
       case (Instruction)
           6'b100000:
@@ -29,15 +30,15 @@ begin
           begin
             OutAlu = 4'd4;   
           end
-	  6'b000000:  
+	        6'b000000:  
           begin
             OutAlu = 4'd5;   
           end
-	  6'b011000:  
+	        6'b011000:  
           begin
             OutAlu = 4'd6;   
           end
-	  6'b011010:  
+	        6'b011010:  
           begin
             OutAlu = 4'd7;   
           end
@@ -47,6 +48,31 @@ begin
         end
         endcase
     end
-    
+    3'b000:   //LW-SW-ADD
+    begin
+      OutAlu = 4'd0;
+    end
+
+    3'b001:  //BEQ
+    begin
+      OutAlu = 4'd1;
+    end
+
+    3'b100:  //SLTI
+    begin
+      OutAlu = 4'd4;
+    end
+
+    3'b101:  //ANDI
+    begin
+      OutAlu = 4'd2;
+    end
+
+    3'b111:  //ORI
+    begin
+      OutAlu = 4'd3;
+    end
+  endcase
+
 end
 endmodule

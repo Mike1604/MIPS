@@ -12,12 +12,12 @@ begin
   case(Dec)
 	1'b0:
 	begin
-	  Salida <= OP0;
+	  Salida = OP0;
 	end
 
 	1'b1:
 	begin
-	  Salida <= OP1;
+	  Salida = OP1;
 	end	
   endcase
 end

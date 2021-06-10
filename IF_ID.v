@@ -9,10 +9,15 @@ module IF_ID(
     output reg [31:0]ou_add,
     output reg [31:0]ou_insmem
 );
+/*
+initial begin
+	ou_add = 32'h00000000;
+    ou_insmem = 32'h00000000;
+end*/
 
 always @(posedge clk) begin
-    ou_add <= in_add;
-    ou_insmem <= in_insmem;
+    ou_add = in_add;
+    ou_insmem = in_insmem;
 end
 
 endmodule

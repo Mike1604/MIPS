@@ -5,6 +5,6 @@ module Sumador4(
 	output [31:0]B
 );
 
-assign B = A + 4;
+assign B = A + 32'b0100;
 
 endmodule
