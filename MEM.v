@@ -7,6 +7,13 @@ module Memoria(
     output reg[31:0]ReadData
 );
 reg [31:0] MEM1 [0:31];
+
+initial begin
+    $display("Datos cargados en memoria...");
+    $readmemb("MEMD", MEM1);
+    
+end
+
 always @*
 begin
     if(MemRead!=0)

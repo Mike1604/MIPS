@@ -1,6 +1,7 @@
 `timescale 1ns/1ns
 module Unidad_Control(
     input [5:0]Opc,
+    output reg J,
     output reg [1:0] WB,
     output reg [2:0] M,
     output reg [4:0] EX
@@ -20,6 +21,7 @@ begin
       M[2] = 1'b0;  //  MemWrite
       WB[0] = 1'b1; //  RegWrite
       WB[1] = 1'b1; //  MemtoReg
+      J = 1'b0;     //  Instruccion J
     end
 
     6'b100011:   //  LW
@@ -32,6 +34,7 @@ begin
       M[2] = 1'b0;  //  MemWrite
       WB[0] = 1'b1; //  RegWrite
       WB[1] = 1'b0; //  MemtoReg
+      J = 1'b0;     //  Instruccion J
       end
 
     6'b101011:  //  SW
@@ -44,6 +47,7 @@ begin
       M[2] = 1'b0;  //  MemWrite
       WB[0] = 1'b0; //  RegWrite
       WB[1] = 1'bx; //  MemtoReg
+      J = 1'b0;     //  Instruccion J
     end
 
     6'b000100:  //  BEQ
@@ -56,6 +60,7 @@ begin
       M[2] = 1'b0;  //  MemWrite
       WB[0] = 1'b0; //  RegWrite
       WB[1] = 1'bx; //  MemtoReg
+      J = 1'b0;     //  Instruccion J
     end
 
     6'b001000:  //  ADDI
@@ -68,6 +73,7 @@ begin
       M[2] = 1'b0;  //  MemWrite
       WB[0] = 1'b1; //  RegWrite
       WB[1] = 1'b1; //  MemtoReg
+      J = 1'b0;     //  Instruccion J
     end
     
     6'b001010:  //  SLTI
@@ -80,6 +86,7 @@ begin
       M[2] = 1'b0;  //  MemWrite
       WB[0] = 1'b1; //  RegWrite
       WB[1] = 1'b1; //  MemtoReg
+      J = 1'b0;     //  Instruccion J
     end
 
     6'b001100:  //  ANDI
@@ -92,6 +99,7 @@ begin
       M[2] = 1'b0;  //  MemWrite
       WB[0] = 1'b1; //  RegWrite
       WB[1] = 1'b1; //  MemtoReg
+      J = 1'b0;     //  Instruccion J
     end
 
     6'b001101:  //  ORI
@@ -105,7 +113,18 @@ begin
       WB[0] = 1'b1; //  RegWrite
       WB[1] = 1'b1; //  MemtoReg
     end
-    
+    6'b000010: //J
+    begin
+      EX[0] = 1'bx; //  RegDst
+      EX[3:1] = 3'bx; //ALUOp
+      EX[4] = 1'bx;  //  ALUSrc
+      M[0] = 1'b0;  //  branch
+      M[1] = 1'bx;  //  MemRead
+      M[2] = 1'bx;  //  MemWrite
+      WB[0] = 1'bx; //  RegWrite
+      WB[1] = 1'bx; //  MemtoReg
+      J = 1'b1;     //  Instruccion J
+    end
     endcase
 end
 endmodule

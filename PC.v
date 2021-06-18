@@ -16,7 +16,7 @@ always @ ( posedge clk ) begin
 end
 /*
 initial begin
-	Salida = 32'h00000000;
+	Salida = 32'b0;
 end
 
 always@(posedge clk)

@@ -1,0 +1,155 @@
+C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/DTPR.v {1 {vlog -work work -stats=none {C:\Users\FLORESESTRADAABRAHAM\Downloads\Proyecto-Arquitectura-D13E02-main\DTPR.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module DataPath
+
+Top level modules:
+	DataPath
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/Instruction_Memory.v {1 {vlog -work work -stats=none {C:\Users\FLORESESTRADAABRAHAM\Downloads\Proyecto-Arquitectura-D13E02-main\Instruction_Memory.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Instruction_Memory
+
+Top level modules:
+	Instruction_Memory
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/ShiftLeftJ.v {1 {vlog -work work -stats=none {C:\Users\FLORESESTRADAABRAHAM\Downloads\Proyecto-Arquitectura-D13E02-main\ShiftLeftJ.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ShiftLeftJ
+
+Top level modules:
+	ShiftLeftJ
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/MUXJ.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/MUXJ.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module MultiplexorJ
+
+Top level modules:
+	MultiplexorJ
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TB_DataPath
+
+Top level modules:
+	TB_DataPath
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/Sumador4.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/Sumador4.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Sumador4
+
+Top level modules:
+	Sumador4
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/MEM_WB.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/MEM_WB.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module MEM_WB
+
+Top level modules:
+	MEM_WB
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/ID_EX.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/ID_EX.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ID_EX
+
+Top level modules:
+	ID_EX
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/SignExtend.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/SignExtend.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module SignExtend
+
+Top level modules:
+	SignExtend
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/BancoReg.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/BancoReg.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Banco_Registros
+
+Top level modules:
+	Banco_Registros
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/ALU.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/ALU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/MUX.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/MUX.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Multiplexor
+
+Top level modules:
+	Multiplexor
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/EX_MEM.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/EX_MEM.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module EX_MEM
+
+Top level modules:
+	EX_MEM
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/Sumador.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/Sumador.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Sumador
+
+Top level modules:
+	Sumador
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/ALUControl.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/ALUControl.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALUCONTROL
+
+Top level modules:
+	ALUCONTROL
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/AND.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/AND.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module AND
+
+Top level modules:
+	AND
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/IF_ID.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/IF_ID.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module IF_ID
+
+Top level modules:
+	IF_ID
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/PC.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/PC.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PC
+
+Top level modules:
+	PC
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/UnidadControl.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/UnidadControl.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Unidad_Control
+
+Top level modules:
+	Unidad_Control
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/MEM.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/MEM.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Memoria
+
+Top level modules:
+	Memoria
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/MUX4B.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/MUX4B.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Multiplexor4B
+
+Top level modules:
+	Multiplexor4B
+
+} {} {}} C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/ShiftLeft.v {1 {vlog -work work -stats=none C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/ShiftLeft.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ShiftLeft
+
+Top level modules:
+	ShiftLeft
+
+} {} {}}

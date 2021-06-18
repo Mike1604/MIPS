@@ -4,21 +4,28 @@ module DataPath(
 	input CLK
 );
 
-wire [31:0]C1, C2, C3, C4, C5, C6, C7, C8, C9, C13, C14, C15, C16, C17;
+wire [31:0]C1, C1_1, C2, C3, C4, C5, C6, C7, C8, C9, C13, C14, C15, C16, C17;
 wire [31:0]C16_1, C20, C22, C25, C27, C28, C31, C32, C33, C35;
+wire [27:0]OutShJ,out_shfJ;
 wire [1:0]C10, C10_1, C10_2, C10_3;
 wire [2:0]C11, C11_1, C11_2;
 wire [3:0] C23;
 wire [4:0]C12, C12_1, C18, C19, C24, C30, C34;
-wire C21, C26, C29;
+wire C21, C26, C29,JWire,JEX,JEM;
 
 Multiplexor N(
 	.OP0(C3),
 	.OP1(C25),
 	.Dec(C29),
-	.Salida(C1)
+	.Salida(C1_1)
 );
-
+MultiplexorJ J(
+	.PC4(C3),
+	.JAdd(out_shfJ),
+	.OP0(C1_1),
+	.Dec(JEM),
+	.Salida(C1)
+); 
 PC CicloFetch(
 	.clk(CLK),
 	.Entrada(C1),
@@ -47,7 +54,8 @@ Unidad_Control B(
 	.Opc(C6[31:26]),
 	.WB(C10),
 	.M(C11),
-	.EX(C12)
+	.EX(C12),
+	.J(JWire)
 );
 
 Banco_Registros D(
@@ -135,13 +143,17 @@ EX_MEM BUFFER3(
 	.in_res(C22),
 	.in_dat2(C16),
 	.in_mux(C24),
+	.in_ShfJ(OutShJ),
+	.J_in(JWire),
 	.ou_add(C25),
 	.ou_flag(C26),
 	.ou_res(C27),
 	.ou_dat2(C28),
 	.ou_mux(C30),
 	.ou_M(C11_1),
-	.ou_WB(C10_3)
+	.ou_WB(C10_3),
+	.ou_ShfJ(out_shfJ),
+	.J_out(JEM)
 );
 
 AND P(
@@ -150,7 +162,7 @@ AND P(
 	.Salida(C29)
 );
 
-Memoria J(
+Memoria Datos(
 	.Adress(C27),
 	.WriteData(C28),
 	.MemRead(C11_1[1]),
@@ -176,5 +188,8 @@ Multiplexor K(
 	.Dec(C10_1[1]),
 	.Salida(C35)
 );
-
+ShiftLeftJ InsJ (
+	.A(C6[25:0]),
+	.B(OutShJ)
+);
 endmodule

@@ -1,0 +1,416 @@
+vsim work.TB_DataPath
+# vsim work.TB_DataPath 
+# Start time: 06:50:12 on Jun 17,2021
+# Loading work.TB_DataPath
+# Loading work.DataPath
+# Loading work.Multiplexor
+# Loading work.MultiplexorJ
+# Loading work.PC
+# Loading work.Instruction_Memory
+# Loading work.Sumador4
+# Loading work.IF_ID
+# Loading work.Unidad_Control
+# Loading work.Banco_Registros
+# Loading work.SignExtend
+# Loading work.ID_EX
+# Loading work.ShiftLeft
+# Loading work.Sumador
+# Loading work.ALU
+# Loading work.ALUCONTROL
+# Loading work.Multiplexor4B
+# Loading work.EX_MEM
+# Loading work.AND
+# Loading work.Memoria
+# Loading work.MEM_WB
+# Loading work.ShiftLeftJ
+add wave -position end  sim:/TB_DataPath/Clk
+add wave -position end sim:/TB_DataPath/DUV/CicloFetch/*
+add wave -position 1 sim:/TB_DataPath/DUV/J/*
+add wave -position end sim:/TB_DataPath/DUV/B/*
+run -all
+# Datos cargados en Instruction Memory...
+# Datos cargados en memoria...
+# Datos cargados en memoria...
+# ** Note: $stop    : C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v(15)
+#    Time: 6 us  Iteration: 0  Instance: /TB_DataPath
+# Break in Module TB_DataPath at C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v line 15
+# Compile of ALU.v was successful.
+# Compile of ALUControl.v was successful.
+# Compile of AND.v was successful.
+# Compile of BancoReg.v was successful.
+# Compile of DTPR.v was successful.
+# Compile of EX_MEM.v was successful.
+# Compile of ID_EX.v was successful.
+# Compile of IF_ID.v was successful.
+# Compile of Instruction_Memory.v was successful.
+# Compile of MEM.v was successful.
+# Compile of MEM_WB.v was successful.
+# Compile of MUX.v was successful.
+# Compile of MUX4B.v was successful.
+# Compile of PC.v was successful.
+# Compile of ShiftLeft.v was successful.
+# Compile of SignExtend.v was successful.
+# Compile of Sumador.v was successful.
+# Compile of Sumador4.v was successful.
+# Compile of TB_DataPath.v was successful.
+# Compile of UnidadControl.v was successful.
+# Compile of MUXJ.v was successful.
+# Compile of ShiftLeftJ.v was successful.
+# 22 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB_DataPath
+# Loading work.DataPath
+# Loading work.Multiplexor
+# Loading work.MultiplexorJ
+# Loading work.PC
+# Loading work.Instruction_Memory
+# Loading work.Sumador4
+# Loading work.IF_ID
+# Loading work.Unidad_Control
+# Loading work.Banco_Registros
+# Loading work.SignExtend
+# Loading work.ID_EX
+# Loading work.ShiftLeft
+# Loading work.Sumador
+# Loading work.ALU
+# Loading work.ALUCONTROL
+# Loading work.Multiplexor4B
+# Loading work.EX_MEM
+# Loading work.AND
+# Loading work.Memoria
+# Loading work.MEM_WB
+# Loading work.ShiftLeftJ
+run -all
+# Datos cargados en Instruction Memory...
+# Datos cargados en memoria...
+# Datos cargados en memoria...
+# ** Note: $stop    : C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v(15)
+#    Time: 6 us  Iteration: 0  Instance: /TB_DataPath
+# Break in Module TB_DataPath at C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v line 15
+# Compile of ALU.v was successful.
+# Compile of ALUControl.v was successful.
+# Compile of AND.v was successful.
+# Compile of BancoReg.v was successful.
+# Compile of DTPR.v was successful.
+# Compile of EX_MEM.v was successful.
+# Compile of ID_EX.v was successful.
+# Compile of IF_ID.v was successful.
+# Compile of Instruction_Memory.v was successful.
+# Compile of MEM.v was successful.
+# Compile of MEM_WB.v was successful.
+# Compile of MUX.v was successful.
+# Compile of MUX4B.v was successful.
+# Compile of PC.v was successful.
+# Compile of ShiftLeft.v was successful.
+# Compile of SignExtend.v was successful.
+# Compile of Sumador.v was successful.
+# Compile of Sumador4.v was successful.
+# Compile of TB_DataPath.v was successful.
+# Compile of UnidadControl.v was successful.
+# Compile of MUXJ.v was successful.
+# Compile of ShiftLeftJ.v was successful.
+# 22 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB_DataPath
+# Loading work.DataPath
+# Loading work.Multiplexor
+# Loading work.MultiplexorJ
+# Loading work.PC
+# Loading work.Instruction_Memory
+# Loading work.Sumador4
+# Loading work.IF_ID
+# Loading work.Unidad_Control
+# Loading work.Banco_Registros
+# Loading work.SignExtend
+# Loading work.ID_EX
+# Loading work.ShiftLeft
+# Loading work.Sumador
+# Loading work.ALU
+# Loading work.ALUCONTROL
+# Loading work.Multiplexor4B
+# Loading work.EX_MEM
+# Loading work.AND
+# Loading work.Memoria
+# Loading work.MEM_WB
+# Loading work.ShiftLeftJ
+run -all
+# Datos cargados en Instruction Memory...
+# Datos cargados en memoria...
+# Datos cargados en memoria...
+# ** Note: $stop    : C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v(15)
+#    Time: 6 us  Iteration: 0  Instance: /TB_DataPath
+# Break in Module TB_DataPath at C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v line 15
+add wave -position end sim:/TB_DataPath/DUV/D/*
+restart
+run -all
+# Datos cargados en Instruction Memory...
+# Datos cargados en memoria...
+# Datos cargados en memoria...
+# ** Note: $stop    : C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v(15)
+#    Time: 6 us  Iteration: 0  Instance: /TB_DataPath
+# Break in Module TB_DataPath at C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v line 15
+quit -sim
+# End time: 07:22:25 on Jun 17,2021, Elapsed time: 0:32:13
+# Errors: 0, Warnings: 1
+vsim work.TB_DataPath
+# vsim work.TB_DataPath 
+# Start time: 07:22:27 on Jun 17,2021
+# Loading work.TB_DataPath
+# Loading work.DataPath
+# Loading work.Multiplexor
+# Loading work.MultiplexorJ
+# Loading work.PC
+# Loading work.Instruction_Memory
+# Loading work.Sumador4
+# Loading work.IF_ID
+# Loading work.Unidad_Control
+# Loading work.Banco_Registros
+# Loading work.SignExtend
+# Loading work.ID_EX
+# Loading work.ShiftLeft
+# Loading work.Sumador
+# Loading work.ALU
+# Loading work.ALUCONTROL
+# Loading work.Multiplexor4B
+# Loading work.EX_MEM
+# Loading work.AND
+# Loading work.Memoria
+# Loading work.MEM_WB
+# Loading work.ShiftLeftJ
+add wave -position end  sim:/TB_DataPath/Clk
+run -all
+# Datos cargados en Instruction Memory...
+# Datos cargados en memoria...
+# Datos cargados en memoria...
+# ** Note: $stop    : C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v(15)
+#    Time: 6 us  Iteration: 0  Instance: /TB_DataPath
+# Break in Module TB_DataPath at C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v line 15
+# Compile of ALU.v was successful.
+# Compile of ALUControl.v was successful.
+# Compile of AND.v was successful.
+# Compile of BancoReg.v was successful.
+# Compile of DTPR.v was successful.
+# Compile of EX_MEM.v was successful.
+# Compile of ID_EX.v was successful.
+# Compile of IF_ID.v was successful.
+# Compile of Instruction_Memory.v was successful.
+# Compile of MEM.v was successful.
+# Compile of MEM_WB.v was successful.
+# Compile of MUX.v was successful.
+# Compile of MUX4B.v was successful.
+# Compile of PC.v was successful.
+# Compile of ShiftLeft.v was successful.
+# Compile of SignExtend.v was successful.
+# Compile of Sumador.v was successful.
+# Compile of Sumador4.v was successful.
+restart
+# Loading work.TB_DataPath
+# Loading work.DataPath
+# Loading work.Multiplexor
+# Loading work.PC
+# Loading work.Instruction_Memory
+# Loading work.Sumador4
+# Loading work.IF_ID
+# Loading work.Banco_Registros
+# Loading work.SignExtend
+# Loading work.ID_EX
+# Loading work.ShiftLeft
+# Loading work.Sumador
+# Loading work.ALU
+# Loading work.ALUCONTROL
+# Loading work.Multiplexor4B
+# Loading work.EX_MEM
+# Loading work.AND
+# Loading work.Memoria
+# Loading work.MEM_WB
+# Compile of TB_DataPath.v was successful.
+# Compile of UnidadControl.v was successful.
+# Compile of MUXJ.v was successful.
+# Compile of ShiftLeftJ.v was successful.
+# 22 compiles, 0 failed with no errors.
+run -all
+# Datos cargados en Instruction Memory...
+# Datos cargados en memoria...
+# Datos cargados en memoria...
+# ** Note: $stop    : C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v(15)
+#    Time: 6 us  Iteration: 0  Instance: /TB_DataPath
+# Break in Module TB_DataPath at C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v line 15
+# Compile of ALU.v was successful.
+# Compile of ALUControl.v was successful.
+# Compile of AND.v was successful.
+# Compile of BancoReg.v was successful.
+# Compile of DTPR.v was successful.
+# Compile of EX_MEM.v was successful.
+# Compile of ID_EX.v was successful.
+# Compile of IF_ID.v was successful.
+# Compile of Instruction_Memory.v was successful.
+# Compile of MEM.v was successful.
+# Compile of MEM_WB.v was successful.
+# Compile of MUX.v was successful.
+# Compile of MUX4B.v was successful.
+# Compile of PC.v was successful.
+# Compile of ShiftLeft.v was successful.
+# Compile of SignExtend.v was successful.
+# Compile of Sumador.v was successful.
+# Compile of Sumador4.v was successful.
+# Compile of TB_DataPath.v was successful.
+# Compile of UnidadControl.v was successful.
+# Compile of MUXJ.v was successful.
+# Compile of ShiftLeftJ.v was successful.
+# 22 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB_DataPath
+# Loading work.DataPath
+# Loading work.Multiplexor
+# Loading work.MultiplexorJ
+# Loading work.PC
+# Loading work.Instruction_Memory
+# Loading work.Sumador4
+# Loading work.IF_ID
+# Loading work.Unidad_Control
+# Loading work.Banco_Registros
+# Loading work.SignExtend
+# Loading work.ID_EX
+# Loading work.ShiftLeft
+# Loading work.Sumador
+# Loading work.ALU
+# Loading work.ALUCONTROL
+# Loading work.Multiplexor4B
+# Loading work.EX_MEM
+# Loading work.AND
+# Loading work.Memoria
+# Loading work.MEM_WB
+# Loading work.ShiftLeftJ
+run -all
+# Datos cargados en Instruction Memory...
+# Datos cargados en memoria...
+# Datos cargados en memoria...
+# ** Note: $stop    : C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v(15)
+#    Time: 6 us  Iteration: 0  Instance: /TB_DataPath
+# Break in Module TB_DataPath at C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v line 15
+# Compile of ALU.v was successful.
+# Compile of ALUControl.v was successful.
+# Compile of AND.v was successful.
+# Compile of BancoReg.v was successful.
+# Compile of DTPR.v was successful.
+# Compile of EX_MEM.v was successful.
+# Compile of ID_EX.v was successful.
+# Compile of IF_ID.v was successful.
+# Compile of Instruction_Memory.v was successful.
+# Compile of MEM.v was successful.
+# Compile of MEM_WB.v was successful.
+# Compile of MUX.v was successful.
+# Compile of MUX4B.v was successful.
+# Compile of PC.v was successful.
+# Compile of ShiftLeft.v was successful.
+# Compile of SignExtend.v was successful.
+# Compile of Sumador.v was successful.
+# Compile of Sumador4.v was successful.
+# Compile of TB_DataPath.v was successful.
+# Compile of UnidadControl.v was successful.
+# Compile of MUXJ.v was successful.
+# Compile of ShiftLeftJ.v was successful.
+# 22 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB_DataPath
+# Loading work.DataPath
+# Loading work.Multiplexor
+# Loading work.MultiplexorJ
+# Loading work.PC
+# Loading work.Instruction_Memory
+# Loading work.Sumador4
+# Loading work.IF_ID
+# Loading work.Unidad_Control
+# Loading work.Banco_Registros
+# Loading work.SignExtend
+# Loading work.ID_EX
+# Loading work.ShiftLeft
+# Loading work.Sumador
+# Loading work.ALU
+# Loading work.ALUCONTROL
+# Loading work.Multiplexor4B
+# Loading work.EX_MEM
+# Loading work.AND
+# Loading work.Memoria
+# Loading work.MEM_WB
+# Loading work.ShiftLeftJ
+run -all
+# Datos cargados en Instruction Memory...
+# Datos cargados en memoria...
+# Datos cargados en memoria...
+# ** Note: $stop    : C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v(15)
+#    Time: 6 us  Iteration: 0  Instance: /TB_DataPath
+# Break in Module TB_DataPath at C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v line 15
+add wave -position end sim:/TB_DataPath/DUV/CicloFetch/*
+restart
+run -all
+# Datos cargados en Instruction Memory...
+# Datos cargados en memoria...
+# Datos cargados en memoria...
+# ** Note: $stop    : C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v(15)
+#    Time: 6 us  Iteration: 0  Instance: /TB_DataPath
+# Break in Module TB_DataPath at C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v line 15
+restart
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+run -all
+# Datos cargados en Instruction Memory...
+# Datos cargados en memoria...
+# Datos cargados en memoria...
+# ** Note: $stop    : C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v(15)
+#    Time: 6 us  Iteration: 0  Instance: /TB_DataPath
+# Break in Module TB_DataPath at C:/Users/FLORESESTRADAABRAHAM/Downloads/Proyecto-Arquitectura-D13E02-main/TB_DataPath.v line 15
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 10:03:24 on Jun 17,2021, Elapsed time: 2:40:57
+# Errors: 0, Warnings: 1
