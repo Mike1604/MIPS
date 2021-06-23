@@ -56,9 +56,9 @@ begin
       EX[3:1] = 3'b001; //ALUOp
       EX[4] = 1'b0;  //  ALUSrc
       M[0] = 1'b1;  //  branch
-      M[1] = 1'b0;  //  MemRead
-      M[2] = 1'b0;  //  MemWrite
-      WB[0] = 1'b0; //  RegWrite
+      M[1] = 1'bx;  //  MemRead
+      M[2] = 1'bx;  //  MemWrite
+      WB[0] = 1'bx; //  RegWrite
       WB[1] = 1'bx; //  MemtoReg
       J = 1'b0;     //  Instruccion J
     end
@@ -112,6 +112,7 @@ begin
       M[2] = 1'b0;  //  MemWrite
       WB[0] = 1'b1; //  RegWrite
       WB[1] = 1'b1; //  MemtoReg
+      J = 1'b1;     //  Instruccion J
     end
     6'b000010: //J
     begin

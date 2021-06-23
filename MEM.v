@@ -10,7 +10,7 @@ reg [31:0] MEM1 [0:31];
 
 initial begin
     $display("Datos cargados en memoria...");
-    $readmemb("MEMD", MEM1);
+    $readmemb("MEMD.txt", MEM1);
     
 end
 

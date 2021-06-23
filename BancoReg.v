@@ -14,7 +14,7 @@ reg [31:0] BRM [0:31];
 
 initial begin
     $display("Datos cargados en memoria...");
-    $readmemb("BRF2", BRM);
+    $readmemb("BR", BRM);
     
 end
 

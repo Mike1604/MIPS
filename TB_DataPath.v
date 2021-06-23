@@ -11,7 +11,7 @@ DataPath DUV(
 always #100 Clk = ~Clk;
 
 initial begin
-#6000
+#21200
 $stop;
 
 end

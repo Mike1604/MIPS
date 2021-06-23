@@ -10,7 +10,7 @@ reg [7:0]M[0:399];
 initial begin
 
 	$display("Datos cargados en Instruction Memory...");
-    $readmemb("Insmemf2", M);
+    $readmemb("MEMIns.txt", M);
 end
 
 always@*
